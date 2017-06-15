@@ -25,7 +25,8 @@ import { AppState } from './app.service'
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Index
       </a>
-      <a [routerLink]=" ['./homes'] "
+      <!-- VehSchPOC : BrokenFunc4 : Home link not working : SC00367807 : 13Jun17 -->
+      <a [routerLink]=" ['./home'] "
         md-button
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Home
@@ -34,6 +35,12 @@ import { AppState } from './app.service'
         md-button
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Users
+      </a>
+      <!-- VehSchPOC : NewFunc7 : About Page : SC00367807 : 15Jun17 -->
+      <a [routerLink]=" ['./about'] "
+        md-button
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        About
       </a>
 
     </nav>

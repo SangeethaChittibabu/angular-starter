@@ -1,6 +1,7 @@
 <md-dialog-content>
   <md-input-container>
-    <input mdInput  placeholder="Date of Birth" [(ngModel)]="user.lastName"  />
+  <!-- VehSchPOC : BrokenFunc4 : Edit User not working : SC00367807 : 13Jun17 -->
+    <input mdInput  placeholder="Last Name" [(ngModel)]="user.lastName"  />
   </md-input-container>
   <md-input-container>
     <input mdInput  placeholder="First Name" [(ngModel)]="user.firstName" />
@@ -12,7 +13,8 @@
   <md-datepicker #picker></md-datepicker>
 </md-dialog-content>
 <md-dialog-actions>
-  <button md-button color="primary">
+<!-- VehSchPOC : NewFunc3 : Update User : SC00367807 : 15Jun17 -->
+  <button md-button color="primary"  (click) = "update()">
     Update
   </button>
 </md-dialog-actions>

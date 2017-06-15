@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+//VehSchPOC : NewFunc5 : Pagination : SC00367807 : 14Jun17
+import {Ng2PaginationModule} from 'ng2-pagination';
 import { FormsModule } from '@angular/forms'
 import { MaterialModule, MdNativeDateModule } from '@angular/material'
 import { HttpModule } from '@angular/http'
@@ -29,6 +31,8 @@ import { AppState, InternalStateType } from './app.service'
 import { HomeComponent } from './home'
 import { UserComponent, UserEditComponent, UsersComponent } from './users'
 import { NoContentComponent } from './no-content'
+//VehSchPOC : NewFunc7 : About Page : SC00367807 : 15Jun17
+import { AboutComponent } from './about/about.component'
 import { XLargeDirective } from './home/x-large'
 
 import '../styles/styles.scss'
@@ -48,6 +52,7 @@ type StoreType = {
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
+ *  VehSchPOC : NewFunc7 : About Page : SC00367807 : 15Jun17
  */
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -58,6 +63,7 @@ type StoreType = {
     AppComponent,
     HomeComponent,
     NoContentComponent,
+    AboutComponent,
     UserComponent,
     UserEditComponent,
     UsersComponent,
@@ -66,13 +72,15 @@ type StoreType = {
   /**
    * Import Angular's modules.
    */
+   //VehSchPOC : NewFunc5 : Pagination : SC00367807 : 14Jun17
   imports: [
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, 
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule,
     MdNativeDateModule,
+    Ng2PaginationModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   /**

@@ -1,4 +1,3 @@
-
 <md-card>
   <h3>Users</h3>
 
@@ -10,12 +9,17 @@
       <input mdInput  placeholder="First Name" [(ngModel)]="filter.firstName" (ngModelChange)="filterUsers($event)" />
     </md-input-container>
     <md-list>
-      <div *ngFor="let user of filteredUsers">
+    <!-- VehSchPOC : NewFunc5 : Pagination : SC00367807 : 14Jun17 -->
+      <div *ngFor="let user of filteredUsers | paginate: { itemsPerPage: 20, currentPage: p }" >
+      <!--  <div *ngFor="let user of filteredUsers"> -->
         <md-list-item>
-          <user-info [user]="user" (onEdit)="editUser($event)"></user-info>
+         <!-- VehSchPOC : NewFunc6 : Delete User : SC00367807 : 14Jun17 -->
+          <user-info [user]="user" (onEdit)="editUser(user)" (onDelete) = "deleteUser(user)" ></user-info>
         </md-list-item>
         <md-divider></md-divider>
       </div>
+      <!-- VehSchPOC : NewFunc5 : Pagination : SC00367807 : 14Jun17 -->
+      <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls> 
     </md-list>
   </md-card-content>
 </md-card>

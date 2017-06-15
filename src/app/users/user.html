@@ -1,9 +1,18 @@
 <div class="info-panel">
+<!-- VehSchPOC : NewFunc1 : Display Avatar : SC00367807 : 14Jun17 -->
+	<img class = "userImage" [src]="user.profileImg">
 <!-- VehSchPOC : BrokenFunc1 : LastName not displayed : SC00367807 : 12Jun17 -->
-  {{user.lastName}}, {{user.firstName}}
+  {{user.lastName}}, {{user.firstName}}, 
+  <!-- VehSchPOC : NewFunc2 : Display Age : SC00367807 : 14Jun17 -->
+  ({{computeUserAge()}})
 </div>
 <div class="action-buttons">
-  <button md-mini-fab (click)="onEdit.emit()">
+<!--   VehSchPOC : BrokenFunc4 : Edit User not working : SC00367807 : 13Jun17 -->
+  <button md-mini-fab (click)="onEdit.emit($event)">
     Edit
+  </button>
+  <!-- VehSchPOC : NewFunc6 : Delete User : SC00367807 : 14Jun17 -->
+   <button md-mini-fab (click)="onDelete.emit($event)" >
+    Delete
   </button>
 </div>
